@@ -1,8 +1,13 @@
+import FeaturesPosts from "@/components/home-sections/FeaturesPosts";
+import Hero from "@/components/home-sections/Hero";
+
 const HomePage = () => {
   return (
-    <main>
-      <h1>Home page</h1>
-    </main>
+    <>
+      <Hero />
+
+      <FeaturesPosts />
+    </>
   )
 }
 
