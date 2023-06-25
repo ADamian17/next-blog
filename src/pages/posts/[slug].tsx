@@ -8,11 +8,11 @@ const PostPage: React.FC<Posts.PostContentProps> = ({ post }) => {
   return (
     <>
       <Head>
-        <title>Adonis Blog | {post.title}</title>
-        <meta name="description" content={post.content} />
+        <title>Adonis Blog | {post?.title || ""}</title>
+        <meta name="description" />
       </Head>
 
-      <PostContent post={post} />
+      {post && <PostContent post={post} />}
     </>
   )
 }
