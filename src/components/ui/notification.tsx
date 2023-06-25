@@ -1,4 +1,4 @@
-import ReactDOM from 'react-dom';
+import ReactDOM, { createPortal } from 'react-dom';
 
 import classes from './notification.module.scss';
 
@@ -19,12 +19,12 @@ const Notification: React.FC<NotificationProps> = (props) => {
 
   const cssClasses = `${classes.notification} ${status && statusClasses[status]}`;
 
-  return (
+  return ReactDOM.createPortal((
     <div className={cssClasses}>
       <h2>{title}</h2>
       <p>{message}</p>
     </div>
-  );
+  ), document.getElementById('notification')!);
 }
 
 export default Notification;
