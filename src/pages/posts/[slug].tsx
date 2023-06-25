@@ -2,10 +2,18 @@ import { GetStaticProps } from "next";
 
 import { getPostData, getPostsFiles, rmFileExtension } from "@/helpers/posts-utils";
 import PostContent from "@/components/posts/post-detail/post-content";
+import Head from "next/head";
 
 const PostPage: React.FC<Posts.PostContentProps> = ({ post }) => {
   return (
-    <PostContent post={post} />
+    <>
+      <Head>
+        <title>Adonis Blog | {post.title}</title>
+        <meta name="description" content={post.content} />
+      </Head>
+
+      <PostContent post={post} />
+    </>
   )
 }
 

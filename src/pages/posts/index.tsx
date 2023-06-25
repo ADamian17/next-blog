@@ -2,9 +2,19 @@ import { GetStaticProps } from "next";
 
 import { getAllPosts } from "@/helpers/posts-utils";
 import AllPosts from "@/components/posts/all-posts";
+import Head from "next/head";
 
 const PostsPage: React.FC<Posts.PostsGridProps> = ({ posts }) => {
-  return <AllPosts posts={posts} />
+  return (
+    <>
+      <Head>
+        <title>Adonis Blog | Posts</title>
+
+        <meta name="description" content="All posts" />
+      </Head>
+      <AllPosts posts={posts} />
+    </>
+  )
 };
 
 export default PostsPage;

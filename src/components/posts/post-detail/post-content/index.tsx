@@ -23,7 +23,7 @@ const PostContent: React.FC<Posts.PostContentProps> = ({ post }) => {
           <div className={styles.image}>
             <Image
               src={`/images/posts/${slug}/${image.properties.src}`}
-              alt={image.alt}
+              alt={image.alt || ''}
               width={600}
               height={300}
             />
